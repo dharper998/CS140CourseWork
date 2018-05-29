@@ -1,0 +1,29 @@
+package lab03;
+
+import java.util.Arrays;
+
+public class ArrayTester {
+	public static void main(String[] args) {
+		int argsLength = args.length;
+		if (argsLength == 1) {
+			ArrayFromFile fileArray = new ArrayFromFile(args[0]);
+			System.out.println("Expected: 20, 8, 13, 46, 7");
+			System.out.println(fileArray);
+			fileArray.removeOddElements();
+			System.out.println("Expected: 20, 8, 46");
+			System.out.println(fileArray);
+		} else {
+			throw new IllegalArgumentException("Cannot accept more than one argument");
+		}
+		int[] intArray = new int[5];
+		System.out.println(Arrays.toString(intArray));
+		int n = 0;
+		for (int i : intArray) {
+    			i = n;
+    			n++; // shorthand to increment by 1
+		}
+		System.out.println(Arrays.toString(intArray));
+
+		String[] stringArray = {"Dog", "Tree", "Wheel", "Red"};
+	}
+}
